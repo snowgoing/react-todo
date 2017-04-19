@@ -35,7 +35,13 @@ module.exports = {
     filename: './public/bundle.js'
   },
   resolve: {
+    // modulesDirectories no longer supported
+    // modulesDirectories: [
+    //   'node_modules',
+    //   './app/components'
+    // ],
     alias: {
+      TodoApp: path.resolve('app/components/TodoApp.jsx'),
       applicationStyles: path.resolve('app/styles/app.scss')
     },
     extensions: ['.js', '.jsx']
