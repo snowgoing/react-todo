@@ -42,6 +42,8 @@ module.exports = {
     // ],
     alias: {
       TodoApp: path.resolve('app/components/TodoApp.jsx'),
+      TodoList: path.resolve('app/components/TodoList.jsx'),
+      Todo: path.resolve('app/components/Todo.jsx'),
       applicationStyles: path.resolve('app/styles/app.scss')
     },
     extensions: ['.js', '.jsx']
