@@ -3,6 +3,7 @@ var {Component} = React;
 var TodoList = require('TodoList');
 var AddTodo = require('AddTodo');
 var TodoSearch = require('TodoSearch');
+var uuid = require('node-uuid');
 
 class TodoApp extends Component {
   constructor(props) {
@@ -12,16 +13,16 @@ class TodoApp extends Component {
       searchText: '',
       todos: [
         {
-          id: 1,
+          id: uuid(),
           text: 'Run the jewels'
         }, {
-          id: 2,
+          id: uuid(),
           text: 'Risk the loot'
         }, {
-          id: 3,
+          id: uuid(),
           text: 'Pack the mule'
         }, {
-          id: 4,
+          id: uuid(),
           text: 'Lift the ban'
         }
       ]
@@ -30,10 +31,16 @@ class TodoApp extends Component {
   }
   handleAddTodo(text) {
     // var newArr = this.state.todos.push({text, id: Math.random() * 1000});
-    // this.setState({
-    //   todos: newArr
-    // });
-    // console.log(this.state.todos);
+    this.setState({
+      todos: [
+        ...this.state.todos,
+        {
+          id: uuid(),
+          text: text
+        }
+      ]
+    });
+    console.log(this.state.todos);
   }
   handleSearch(showCompleted, searchText) {
     this.setState({
