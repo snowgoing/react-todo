@@ -1,9 +1,12 @@
 var React = require('react');
 var {Component} = React;
+var uuid = require('node-uuid');
+
 var TodoList = require('TodoList');
 var AddTodo = require('AddTodo');
 var TodoSearch = require('TodoSearch');
-var uuid = require('node-uuid');
+var TodoAPI = require('TodoAPI');
+
 
 class TodoApp extends Component {
   constructor(props) {
@@ -11,36 +14,20 @@ class TodoApp extends Component {
     this.state = {
       showCompleted: false,
       searchText: '',
-      todos: [
-        {
-          id: uuid(),
-          text: 'Run the jewels',
-          completed: false
-        }, {
-          id: uuid(),
-          text: 'Risk the loot',
-          completed: false
-        }, {
-          id: uuid(),
-          text: 'Pack the mule',
-          completed: false
-        }, {
-          id: uuid(),
-          text: 'Lift the ban',
-          completed: false
-        }
-      ]
+      todos: TodoAPI.getTodos()
     };
-    // this.handleAddTodo = this.handleAddTodo.bind(this);
+  }
+  componentDidUpdate(prevProps, prevState) {
+    TodoAPI.setTodos(this.state.todos);
   }
   handleAddTodo(text) {
-    // var newArr = this.state.todos.push({text, id: Math.random() * 1000});
     this.setState({
       todos: [
         ...this.state.todos,
         {
           id: uuid(),
-          text: text
+          text: text,
+          completed: false
         }
       ]
     });
