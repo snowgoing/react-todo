@@ -49,6 +49,7 @@ module.exports = {
       AddTodo: path.resolve('app/components/AddTodo.jsx'),
       actions: path.resolve('app/actions/actions.jsx'),
       reducers: path.resolve('app/reducers/reducers.jsx'),
+      configureStore: path.resolve('app/store/configureStore.jsx'),
       applicationStyles: path.resolve('app/styles/app.scss')
     },
     extensions: ['.js', '.jsx']
