@@ -12,6 +12,13 @@ export var addTodo = (text) => {
   };
 };
 
+export var removeTodo = (id) => {
+  return {
+    type: 'REMOVE_TODO',
+    id
+  };
+};
+
 export var toggleShowCompleted = () => {
   return {
     type: 'TOGGLE_SHOW_COMPLETED'
