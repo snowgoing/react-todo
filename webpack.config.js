@@ -41,6 +41,7 @@ module.exports = {
     //   './app/components'
     // ],
     alias: {
+      app: path.resolve('app'),
       TodoApp: path.resolve('app/components/TodoApp.jsx'),
       TodoList: path.resolve('app/components/TodoList.jsx'),
       TodoSearch: path.resolve('app/components/TodoSearch.jsx'),

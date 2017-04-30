@@ -10,7 +10,7 @@ export class AddTodo extends Component {
     var text = this.refs.text.value;
 
     if(text) {
-      dispatch(actions.addTodo(text));
+      dispatch(actions.startAddTodo(text));
       this.refs.text.value = '';
     } else {
       this.refs.text.focus();
@@ -18,7 +18,7 @@ export class AddTodo extends Component {
   }
   render() {
     return (
-      <div>
+      <div className='container__footer'>
         <form onSubmit={this.onSubmit.bind(this)}>
           <input type='text' ref='text' placeholder='What do you need to do?'/>
           <button className='button expanded'>Add Todo</button>

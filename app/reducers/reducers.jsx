@@ -24,13 +24,7 @@ export var todosReducer = (state = [], action) => {
     case 'ADD_TODO':
       return [
         ...state,
-        {
-          id: uuid(),
-          text: action.text,
-          completed: false,
-          createdAt: moment().unix(),
-          completedAt: undefined
-        }
+        action.todo
       ];
     case 'ADD_TODOS':
       return [
@@ -51,6 +45,7 @@ export var todosReducer = (state = [], action) => {
           return todo;
         }
       });
+      // Not being used at the moment
     case 'REMOVE_TODO':
       return state.filter(todo => todo.id !== action.id);
     default:

@@ -7,7 +7,7 @@ export class TodoSearch extends Component {
   render() {
     var {dispatch, showCompleted, searchText} = this.props;
     return (
-        <div>
+        <div className='container__header'>
           <div>
             <input type='search' ref='searchText' placeholder='Search todos' value={searchText} onChange={() => {
               var searchText = this.refs.searchText.value;
