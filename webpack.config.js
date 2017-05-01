@@ -39,17 +39,6 @@ module.exports = {
         STORAGE_BUCKET: JSON.stringify(process.env.STORAGE_BUCKET),
         MESSAGING_SENDER_ID: JSON.stringify(process.env.MESSAGING_SENDER_ID)
       }
-    }),
-    // This LoaderOptionsPlugin doesn't seem to work
-    new webpack.LoaderOptionsPlugin({
-      options: {
-          // context: '/',
-          sassLoader: {
-              includePaths: [
-                  path.resolve(__dirname, './node_modules/foundation-sites/scss')
-              ]
-          }
-      }
     })
   ],
   output: {
