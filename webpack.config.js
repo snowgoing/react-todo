@@ -40,10 +40,7 @@ module.exports = {
         MESSAGING_SENDER_ID: JSON.stringify(process.env.MESSAGING_SENDER_ID)
       }
     }),
-    // This LoaderOptionsPlugin doesn't work at all
-    // leaving it in for reference
-    // manually followed paths into node_modules in _foundation-settings.scss
-    // and app.scss
+    // This LoaderOptionsPlugin doesn't seem to work
     new webpack.LoaderOptionsPlugin({
       options: {
           // context: '/',
