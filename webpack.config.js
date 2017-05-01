@@ -1,6 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 module.exports = {
   entry: [
     'script-loader!jquery/dist/jquery.min.js',
@@ -14,6 +16,11 @@ module.exports = {
     new webpack.ProvidePlugin({
       '$': 'jquery',
       'jQuery': 'jquery'
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      }
     }),
     // This LoaderOptionsPlugin doesn't work at all
     // leaving it in for reference
@@ -68,5 +75,5 @@ module.exports = {
     ]
   },
 
-  devtool: 'eval-source-map'
+  devtool: process.env.NODE_ENV === 'production' ? undefined : 'eval-source-map'
 };
