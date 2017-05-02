@@ -15,7 +15,7 @@ store.dispatch(actions.startAddTodos());
 $(document).foundation();
 
 // App css
-import 'style-loader!css-loader!sass-loader!applicationStyles';
+require('style-loader!css-loader!sass-loader!applicationStyles');
 
 ReactDOM.render(
   <Provider store={store}>
