@@ -46,11 +46,6 @@ module.exports = {
     filename: './public/bundle.js'
   },
   resolve: {
-    // modulesDirectories no longer supported
-    // modulesDirectories: [
-    //   'node_modules',
-    //   './app/components'
-    // ],
     alias: {
       app: path.resolve('app'),
       TodoApp: path.resolve('app/components/TodoApp.jsx'),
@@ -78,6 +73,5 @@ module.exports = {
       }
     ]
   },
-
   devtool: process.env.NODE_ENV === 'production' ? undefined : 'eval-source-map'
 };
