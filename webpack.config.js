@@ -48,6 +48,7 @@ module.exports = {
   resolve: {
     alias: {
       app: path.resolve('app'),
+      Login: path.resolve('app/components/Login.jsx'),
       TodoApp: path.resolve('app/components/TodoApp.jsx'),
       TodoList: path.resolve('app/components/TodoList.jsx'),
       TodoSearch: path.resolve('app/components/TodoSearch.jsx'),

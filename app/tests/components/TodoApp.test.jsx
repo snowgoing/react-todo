@@ -6,7 +6,8 @@ var $ = require('jQuery');
 var TestUtils = require('react-dom/test-utils');
 
 var configureStore = require('configureStore');
-var TodoApp = require('TodoApp');
+// {TodoApp} grabs unconnected version for tests
+import {TodoApp} from 'TodoApp'; 
 import TodoList from 'TodoList';
 
 describe('TodoApp', () => {
